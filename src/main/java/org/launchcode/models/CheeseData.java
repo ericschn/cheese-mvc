@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class CheeseData {
 
+    // create an ArrayList to hold all cheese objects
     static ArrayList<Cheese> cheeses = new ArrayList<>();
 
     // getAll

@@ -47,7 +47,7 @@ public class CheeseController {
         }
 
         CheeseData.add(newCheese);
-        return "redirect:";
+        return "redirect:/cheese";
     }
 
 
@@ -61,13 +61,13 @@ public class CheeseController {
     }
 
     @RequestMapping(value = "edit/*", method = RequestMethod.POST)
-    public String processEditForm(int cheeseId, String name, String description) {
+    public String processEditForm(int cheeseId, String name, String description, CheeseType type) {
 
 
         Cheese editCheese = CheeseData.getById(cheeseId);
         editCheese.setName(name);
         editCheese.setDescription(description);
-
+        editCheese.setType(type);
 
         return "redirect:/cheese";
     }
@@ -86,6 +86,6 @@ public class CheeseController {
             CheeseData.remove(cheeseId);
         }
 
-        return "redirect:";
+        return "redirect:/cheese";
     }
 }
